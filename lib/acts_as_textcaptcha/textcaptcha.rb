@@ -84,7 +84,7 @@ module ActsAsTextcaptcha
       def generate_spam_question(use_textcaptcha = true)
         if use_textcaptcha && textcaptcha_config && textcaptcha_config[:api_key]
           begin
-            resp = Net::HTTP.get(URI.parse('http://textcaptcha.com/api/'+textcaptcha_config[:api_key]))
+            resp = Net::HTTP.get(URI.parse('http://textcaptcha.ru/api/'+textcaptcha_config[:api_key]))
             return [] if resp.empty?
 
             if defined?(ActiveSupport::XmlMini)
