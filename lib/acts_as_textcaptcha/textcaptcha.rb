@@ -20,7 +20,7 @@ module ActsAsTextcaptcha
     rake_tasks do
       load "tasks/textcaptcha.rake"
     end
-  end
+  end if Rails::VERSION::MAJOR >= 3
 
   module Textcaptcha #:nodoc:
 
