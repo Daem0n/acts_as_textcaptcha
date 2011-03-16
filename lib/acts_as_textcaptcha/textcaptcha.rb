@@ -69,7 +69,7 @@ module ActsAsTextcaptcha
       end
 
       def validate_spam_answer
-        (spam_answer && possible_answers) ? possible_answers.include?(encrypt_answer(Digest::MD5.hexdigest(spam_answer.strip.downcase.to_s))) : false
+        (spam_answer && possible_answers) ? possible_answers.include?(encrypt_answer(Digest::MD5.hexdigest(spam_answer.strip.mb_chars.downcase.to_s))) : false
       end
 
       def encrypt_answers(answers)
